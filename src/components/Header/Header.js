@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { useMediaQuery, useTheme } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { useMediaQuery, useTheme } from '@mui/material';
 import DrawerComp from './DrawerComp';
 
 const Header = () => {

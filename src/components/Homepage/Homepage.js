@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import Header from '../Header/Header';
 import Box from '@mui/material/Box';
 import bannerImg from '../../img/banner.jpg';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { Button, Grid, IconButton, Typography } from '@mui/material';
-import Footer from '../Footer/Footer';
 
 const Homepage = () => {
   const [btnState, setBtnState] = useState({
@@ -61,12 +59,6 @@ const Homepage = () => {
       color: '#fff',
       padding: '2rem',
     },
-    header: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-    },
   };
 
   return (
@@ -105,10 +97,10 @@ const Homepage = () => {
           </IconButton>
         </Typography>
       </div>
-      <div>
+      {/* <div>
         <Header />
       </div>
-      <Footer />
+      <Footer /> */}
     </Box>
   );
 };
