@@ -3,21 +3,7 @@ import Grid from '@mui/material/Grid';
 import { Box } from '@mui/system';
 import couple from '../../img/couple.jpg';
 import { Autocomplete, Button, FormControl, TextField, Typography } from '@mui/material';
-
-const styles = {
-  registerImage: {
-    position: 'relative',
-    paddingRight: '1rem',
-  },
-  overlay: {
-    position: 'absolute',
-    left: '5%',
-    top: 0,
-    width: '90%',
-    height: '100%',
-    backgroundColor: 'rgba(230, 0, 92, 0.15)',
-  },
-};
+import { styles } from './styles';
 
 const Register = () => {
   const candidateTypes = ['Myself', 'Daughter', 'Son', 'Sister', 'Brother', 'Relative', 'Friend'];
@@ -29,7 +15,6 @@ const Register = () => {
         placeItems: 'center',
         display: 'flex',
         justifyContent: 'space-between',
-        paddingTop: '1rem',
         maxWidth: '95%',
         margin: '0 auto',
       }}
@@ -103,13 +88,28 @@ const Register = () => {
                 />
               </FormControl>
             </Grid>
-            <Grid item xs={5}>
+
+            <Grid item xs={3}>
               <Button
                 sx={{ width: '100%', margin: '1.5rem 0', fontSize: '1rem' }}
                 variant="contained"
                 color="primary"
               >
-                Submit
+                Signup
+              </Button>
+            </Grid>
+            <Grid item xs={5}>
+              <Typography textAlign={'center'} variant="body2">
+                Already have an account?
+              </Typography>
+            </Grid>
+            <Grid item xs={3}>
+              <Button
+                sx={{ width: '100%', margin: '1.5rem 0', fontSize: '1rem' }}
+                variant="contained"
+                color="info"
+              >
+                Login
               </Button>
             </Grid>
           </Grid>

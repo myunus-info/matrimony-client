@@ -12,7 +12,7 @@ const Header = () => {
   const [value, setValue] = useState(0);
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down('md'));
-  const navbarItems = ['Home', 'About', 'Services', 'Contact', 'Admin'];
+  const navbarItems = ['Home', 'About', 'Gallery', 'Contact', 'Admin'];
 
   return (
     <AppBar
