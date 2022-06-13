@@ -9,9 +9,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Drawer from '@mui/material/Drawer';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useNavigate } from 'react-router-dom';
 
 const DraweComp = ({ navItems }) => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <>
       <Drawer
@@ -27,8 +30,8 @@ const DraweComp = ({ navItems }) => {
         <List>
           {navItems.map((item, i) => (
             <ListItem key={i} onClick={() => setOpen(false)} divider>
-              <ListItemButton>
-                <ListItemText primary={item} sx={{ color: '#fff' }} />
+              <ListItemButton onClick={() => navigate(`/${item}`)}>
+                <ListItemText primary={item[0].toUpperCase() + item.slice(1)} sx={{ color: '#fff' }} />
               </ListItemButton>
             </ListItem>
           ))}

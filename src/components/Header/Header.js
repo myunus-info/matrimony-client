@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import { useMediaQuery, useTheme } from '@mui/material';
+import React from 'react';
+import { Tab, Tabs, useMediaQuery, useTheme } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+
 import DrawerComp from './DrawerComp';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-  const [value, setValue] = useState(0);
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down('md'));
-  const navbarItems = ['Home', 'About', 'Gallery', 'Contact', 'Admin'];
+  const navbarItems = ['home', 'about', 'gallery', 'register', 'dashboard'];
 
   return (
     <AppBar
@@ -25,7 +24,7 @@ const Header = () => {
       <Toolbar>
         {isMatch ? (
           <>
-            <Typography sx={{ fontStyle: 'italic', fontWeight: '700', cursor: 'pointer' }} variant="h6">
+            <Typography sx={{ fontWeight: '500', cursor: 'pointer' }} variant="body1">
               MATRIMONY SOCIETY
             </Typography>
             <DrawerComp navItems={navbarItems} />
@@ -33,20 +32,25 @@ const Header = () => {
         ) : (
           <Grid container sx={{ placeItems: 'center' }}>
             <Grid item xs={3}>
-              <Typography sx={{ fontStyle: 'italic', fontWeight: '700' }} variant="h6">
+              <Typography sx={{ fontWeight: '500' }} variant="body1">
                 MATRIMONY SOCIETY
               </Typography>
             </Grid>
             <Grid item xs={1} />
             <Grid item xs={7}>
-              <Tabs
-                value={value}
-                textColor="inherit"
-                indicatorColor="secondary"
-                onChange={(_, val) => setValue(val)}
-              >
+              <Tabs>
                 {navbarItems.map((item, i) => (
-                  <Tab key={i} label={item} />
+                  <NavLink
+                    key={i}
+                    to={`/${item}`}
+                    style={({ isActive }) => ({
+                      color: isActive ? '#fff' : '#fff',
+                      borderBottom: isActive ? '2px solid #fff' : '',
+                      textDecoration: 'none',
+                    })}
+                  >
+                    <Tab label={item} />
+                  </NavLink>
                 ))}
               </Tabs>
             </Grid>

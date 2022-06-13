@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import bannerImg from '../../img/banner.jpg';
+// import Header from '../Header/Header';
+// import Footer from '../Footer/Footer';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { Button, Grid, IconButton, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Homepage = () => {
+  const navigate = useNavigate();
   const [btnState, setBtnState] = useState({
     btn1: true,
     btn2: false,
@@ -62,46 +66,53 @@ const Homepage = () => {
   };
 
   return (
-    <Box>
-      <div style={styles.paperContainer} />
-      <div style={styles.overlay}>
-        <Grid container sx={{ placeItems: 'center', paddingTop: '17%', paddingLeft: '9%' }}>
-          <Grid item xs={12}>
-            <Typography color={'#fefefe'} variant="h4">
-              WHAT IS YOUR GENDER?
-            </Typography>
+    <>
+      {/* <Header /> */}
+      <Box>
+        {/* <header>
+      </header> */}
+        <div style={styles.paperContainer} />
+        <div style={styles.overlay}>
+          <Grid container sx={{ placeItems: 'center', paddingTop: '17%', paddingLeft: '9%' }}>
+            <Grid item xs={12}>
+              <Typography color={'#fefefe'} variant="h4">
+                WHAT IS YOUR GENDER?
+              </Typography>
 
-            <Box sx={{ marginTop: '1rem' }}>
-              <Button sx={styles.button1} onClick={handleBtn1}>
-                Male
-              </Button>
-              <Button sx={styles.button2} onClick={handleBtn2}>
-                Female
-              </Button>
-            </Box>
+              <Box sx={{ marginTop: '1rem' }}>
+                <Button sx={styles.button1} onClick={handleBtn1}>
+                  Male
+                </Button>
+                <Button sx={styles.button2} onClick={handleBtn2}>
+                  Female
+                </Button>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </div>
-      <div style={styles.typography}>
-        <Typography variant="body2">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum rem animi blanditiis cupiditate
-          eveniet ullam libero, consequatur assumenda quaerat accusantium iusto veritatis aliquam
-          eligendi necessitatibus incidunt. Aliquid eius impedit repudiandae fugit error dolorum dolor
-          veniam. Doloribus assumenda, libero fugit maxime consequuntur nemo voluptatem nulla corporis
-          repellendus asperiores voluptatum obcaecati blanditiis reiciendis tenetur, placeat nobis
-          repudiandae deserunt! Numquam.
-          <IconButton sx={{ display: 'block', fontSize: '1rem', color: '#fff', fontWeight: 'bold' }}>
-            <span style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Typography variant="h6">CONTINUE</Typography> <ArrowRightAltIcon />
-            </span>
-          </IconButton>
-        </Typography>
-      </div>
-      {/* <div>
-        <Header />
-      </div>
-      <Footer /> */}
-    </Box>
+        </div>
+        <div style={styles.typography}>
+          <Typography variant="body2">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum rem animi blanditiis cupiditate
+            eveniet ullam libero, consequatur assumenda quaerat accusantium iusto veritatis aliquam
+            eligendi necessitatibus incidunt. Aliquid eius impedit repudiandae fugit error dolorum dolor
+            veniam. Doloribus assumenda, libero fugit maxime consequuntur nemo voluptatem nulla corporis
+            repellendus asperiores voluptatum obcaecati blanditiis reiciendis tenetur, placeat nobis
+            repudiandae deserunt! Numquam.
+            <IconButton
+              sx={{ display: 'block', fontSize: '1rem', color: '#fff', fontWeight: 'bold' }}
+              onClick={() => navigate('/register')}
+            >
+              <span style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Typography variant="h6">CONTINUE</Typography> <ArrowRightAltIcon />
+              </span>
+            </IconButton>
+          </Typography>
+        </div>
+        {/* <footer>
+          <Footer />
+        </footer> */}
+      </Box>
+    </>
   );
 };
 
