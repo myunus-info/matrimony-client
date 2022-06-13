@@ -1,8 +1,8 @@
 import Homepage from './components/Homepage/Homepage';
-import Register from './pages/Register/Register';
+// import Register from './pages/Register/Register';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Gallery from './pages/Gallery/Gallery';
+// import Gallery from './pages/Gallery/Gallery';
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
 
       <main>
         <Homepage />
-        <Register />
-        <Gallery />
+        {/* <Register />
+        <Gallery /> */}
       </main>
 
       <footer>
