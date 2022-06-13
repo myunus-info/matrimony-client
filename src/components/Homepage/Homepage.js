@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import bannerImg from '../../img/banner.jpg';
-// import Header from '../Header/Header';
-// import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { Button, Grid, IconButton, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -67,10 +67,8 @@ const Homepage = () => {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Box>
-        {/* <header>
-      </header> */}
         <div style={styles.paperContainer} />
         <div style={styles.overlay}>
           <Grid container sx={{ placeItems: 'center', paddingTop: '17%', paddingLeft: '9%' }}>
@@ -108,10 +106,8 @@ const Homepage = () => {
             </IconButton>
           </Typography>
         </div>
-        {/* <footer>
-          <Footer />
-        </footer> */}
       </Box>
+      <Footer />
     </>
   );
 };

@@ -4,14 +4,14 @@ import { Box } from '@mui/system';
 import couple from '../../img/couple.jpg';
 import { Autocomplete, Button, FormControl, TextField, Typography } from '@mui/material';
 import { styles } from './styles';
-// import Footer from '../Footer/Footer';
-// import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 
 const Register = () => {
   const candidateTypes = ['Myself', 'Daughter', 'Son', 'Sister', 'Brother', 'Relative', 'Friend'];
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Grid
         container
         spacing={3}
@@ -120,7 +120,7 @@ const Register = () => {
           </Box>
         </Grid>
       </Grid>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

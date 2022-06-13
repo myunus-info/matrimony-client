@@ -10,8 +10,8 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { images } from './images';
-// import Header from '../Header/Header';
-// import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -34,7 +34,7 @@ const Gallery = () => {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Box
         sx={{
           width: '75%',
@@ -97,7 +97,7 @@ const Gallery = () => {
         />
       </Box>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

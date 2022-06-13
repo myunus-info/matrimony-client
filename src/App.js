@@ -1,7 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Homepage from './components/Homepage/Homepage';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import Dashboard from './components/Dashboard/Dashboard';
 import Gallery from './components/Gallery/Gallery';
 import Register from './components/Register/Register';
@@ -10,10 +8,6 @@ import NotFound from './pages/NotFound/NotFound';
 function App() {
   return (
     <div>
-      <header>
-        <Header />
-      </header>
-
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Homepage />} />
@@ -23,10 +17,6 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }
