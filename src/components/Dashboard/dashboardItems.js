@@ -8,26 +8,26 @@ export const dashboardItems = [
   {
     icon: <SettingsOutlinedIcon />,
     label: 'Settings',
-    route: '/settings',
+    route: 'settings',
   },
   {
     icon: <GridViewIcon />,
     label: 'Manage Users',
-    route: '/manage-users',
+    route: 'manage-users',
   },
   {
     icon: <AddModeratorOutlinedIcon />,
     label: 'Make Admin',
-    route: '/make-admin',
+    route: 'make-admin',
   },
   {
     icon: <RateReviewOutlinedIcon />,
     label: 'Review',
-    route: '/review',
+    route: 'review',
   },
   {
     icon: <AddCardOutlinedIcon />,
     label: 'Billing',
-    route: '/billing',
+    route: 'billing',
   },
 ];

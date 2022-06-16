@@ -35,6 +35,12 @@ const DraweComp = ({ navItems }) => {
               </ListItemButton>
             </ListItem>
           ))}
+
+          <ListItem onClick={() => setOpen(false)} divider>
+            <ListItemButton onClick={() => navigate('/dashboard/settings')}>
+              <ListItemText primary="Dashboard" sx={{ color: '#fff' }} />
+            </ListItemButton>
+          </ListItem>
         </List>
       </Drawer>
       <IconButton sx={{ marginLeft: 'auto', color: '#fff' }} onClick={() => setOpen(!open)}>

@@ -4,17 +4,21 @@ import bannerImg from '../../img/banner.jpg';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { Button, Grid, IconButton, Typography } from '@mui/material';
+import { FormControlLabel, Grid, IconButton, Radio, RadioGroup, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-const Homepage = () => {
+const Homepage = props => {
   const navigate = useNavigate();
-  const [btnState, setBtnState] = useState({
-    btn1: true,
-    btn2: false,
-  });
-  const handleBtn1 = () => setBtnState({ btn1: true, btn2: false });
-  const handleBtn2 = () => setBtnState({ btn1: false, btn2: true });
+  const [radio, setRadio] = useState('Male');
+  props.selectGender(radio);
+
+  // const [btnState, setBtnState] = useState({
+  //   btn1: true,
+  //   btn2: false,
+  // });
+
+  // const handleCheck1 = () => setBtnState({ btn1: true, btn2: false });
+  // const handleCheck2 = () => setBtnState({ btn1: false, btn2: true });
 
   const styles = {
     paperContainer: {
@@ -33,27 +37,6 @@ const Homepage = () => {
       height: '95vh',
       backgroundColor: 'rgba(0, 0, 0, 0.3)',
     },
-    button1: {
-      marginRight: '1rem',
-      padding: '1px 2rem',
-      fontSize: '1.3rem',
-      backgroundColor: `${btnState.btn1 ? '#e6005c' : '#fff'}`,
-      color: `${btnState.btn1 ? '#fff' : '#000'}`,
-      '&:hover': {
-        backgroundColor: `${btnState.btn1 ? '#e6005c' : '#fff'}`,
-        color: `${btnState.btn1 ? '#fff' : '#000'}`,
-      },
-    },
-    button2: {
-      padding: '1px 2rem',
-      fontSize: '1.3rem',
-      backgroundColor: `${btnState.btn2 ? '#e6005c' : '#fff'}`,
-      color: `${btnState.btn2 ? '#fff' : '#000'}`,
-      '&:hover': {
-        backgroundColor: `${btnState.btn2 ? '#e6005c' : '#fff'}`,
-        color: `${btnState.btn2 ? '#fff' : '#000'}`,
-      },
-    },
     typography: {
       position: 'absolute',
       right: 0,
@@ -63,6 +46,28 @@ const Homepage = () => {
       color: '#fff',
       padding: '2rem',
     },
+
+    // button1: {
+    //   marginRight: '1rem',
+    //   padding: '1px 2rem',
+    //   fontSize: '1.3rem',
+    //   backgroundColor: `${btnState.btn1 ? '#e6005c' : '#fff'}`,
+    //   color: `${btnState.btn1 ? '#fff' : '#000'}`,
+    //   '&:hover': {
+    //     backgroundColor: `${btnState.btn1 ? '#e6005c' : '#fff'}`,
+    //     color: `${btnState.btn1 ? '#fff' : '#000'}`,
+    //   },
+    // },
+    // button2: {
+    //   padding: '1px 2rem',
+    //   fontSize: '1.3rem',
+    //   backgroundColor: `${btnState.btn2 ? '#e6005c' : '#fff'}`,
+    //   color: `${btnState.btn2 ? '#fff' : '#000'}`,
+    //   '&:hover': {
+    //     backgroundColor: `${btnState.btn2 ? '#e6005c' : '#fff'}`,
+    //     color: `${btnState.btn2 ? '#fff' : '#000'}`,
+    //   },
+    // },
   };
 
   return (
@@ -78,12 +83,35 @@ const Homepage = () => {
               </Typography>
 
               <Box sx={{ marginTop: '1rem' }}>
-                <Button sx={styles.button1} onClick={handleBtn1}>
+                {/* <Button sx={styles.button1} onClick={handleBtn1}>
                   Male
                 </Button>
                 <Button sx={styles.button2} onClick={handleBtn2}>
                   Female
-                </Button>
+                </Button> */}
+
+                <RadioGroup
+                  aria-labelledby="demo-radio-buttons-group-label"
+                  defaultValue="Male"
+                  name="radio-buttons-group"
+                >
+                  <FormControlLabel
+                    sx={{ color: '#fff' }}
+                    value="Male"
+                    control={
+                      <Radio onChange={e => setRadio(e.target.value)} sx={{ color: '#e6005c' }} />
+                    }
+                    label="Male"
+                  />
+                  <FormControlLabel
+                    sx={{ color: '#fff' }}
+                    value="Female"
+                    control={
+                      <Radio onChange={e => setRadio(e.target.value)} sx={{ color: '#e6005c' }} />
+                    }
+                    label="Female"
+                  />
+                </RadioGroup>
               </Box>
             </Grid>
           </Grid>

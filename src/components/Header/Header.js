@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down('md'));
-  const navbarItems = ['home', 'about', 'gallery', 'register', 'dashboard'];
+  const navbarItems = ['home', 'about', 'gallery', 'register'];
 
   return (
     <AppBar
@@ -52,6 +52,17 @@ const Header = () => {
                     <Tab label={item} />
                   </NavLink>
                 ))}
+
+                <NavLink
+                  to='/dashboard/settings'
+                  style={({ isActive }) => ({
+                    color: isActive ? '#fff' : '#fff',
+                    borderBottom: isActive ? '2px solid #fff' : '',
+                    textDecoration: 'none',
+                  })}
+                >
+                  <Tab label='Dashboard' />
+                </NavLink>
               </Tabs>
             </Grid>
           </Grid>

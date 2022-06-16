@@ -7,7 +7,7 @@ import { styles } from './styles';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
-const Register = () => {
+const Register = ({ gender }) => {
   const candidateTypes = ['Myself', 'Daughter', 'Son', 'Sister', 'Brother', 'Relative', 'Friend'];
   return (
     <>
@@ -63,6 +63,7 @@ const Register = () => {
               <Grid item xs={5}>
                 <FormControl sx={{ width: '100%' }}>
                   <Autocomplete
+                    value={gender}
                     options={['Male', 'Female']}
                     renderInput={params => (
                       <TextField {...params} label="Gender" variant="standard" margin="normal" />
@@ -108,13 +109,16 @@ const Register = () => {
                 </Typography>
               </Grid>
               <Grid item xs={3}>
-                <Button
+                {/* <Button
                   sx={{ width: '100%', margin: '1.5rem 0', fontSize: '1rem' }}
                   variant="contained"
                   color="info"
                 >
                   Login
-                </Button>
+                </Button> */}
+                <Typography sx={{ textDecoration: 'underline', cursor: 'pointer' }} variant="body1">
+                  Login
+                </Typography>
               </Grid>
             </Grid>
           </Box>
