@@ -14,8 +14,8 @@ const Footer = () => {
     lineHeight: '5vh',
   };
   return (
-    <Typography align="center" variant="body2" sx={footer}>
-      @ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione sequi tempora ea quam!
+    <Typography sx={footer} variant="body2">
+      &copy; Lorem ipsum dolor, sit amet consectetur adipisicing elit. {new Date().getFullYear()}
     </Typography>
   );
 };
