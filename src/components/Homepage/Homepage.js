@@ -12,14 +12,6 @@ const Homepage = props => {
   const [radio, setRadio] = useState('Male');
   props.selectGender(radio);
 
-  // const [btnState, setBtnState] = useState({
-  //   btn1: true,
-  //   btn2: false,
-  // });
-
-  // const handleCheck1 = () => setBtnState({ btn1: true, btn2: false });
-  // const handleCheck2 = () => setBtnState({ btn1: false, btn2: true });
-
   const styles = {
     paperContainer: {
       height: '95vh',
@@ -46,28 +38,6 @@ const Homepage = props => {
       color: '#fff',
       padding: '2rem',
     },
-
-    // button1: {
-    //   marginRight: '1rem',
-    //   padding: '1px 2rem',
-    //   fontSize: '1.3rem',
-    //   backgroundColor: `${btnState.btn1 ? '#e6005c' : '#fff'}`,
-    //   color: `${btnState.btn1 ? '#fff' : '#000'}`,
-    //   '&:hover': {
-    //     backgroundColor: `${btnState.btn1 ? '#e6005c' : '#fff'}`,
-    //     color: `${btnState.btn1 ? '#fff' : '#000'}`,
-    //   },
-    // },
-    // button2: {
-    //   padding: '1px 2rem',
-    //   fontSize: '1.3rem',
-    //   backgroundColor: `${btnState.btn2 ? '#e6005c' : '#fff'}`,
-    //   color: `${btnState.btn2 ? '#fff' : '#000'}`,
-    //   '&:hover': {
-    //     backgroundColor: `${btnState.btn2 ? '#e6005c' : '#fff'}`,
-    //     color: `${btnState.btn2 ? '#fff' : '#000'}`,
-    //   },
-    // },
   };
 
   return (
@@ -83,13 +53,6 @@ const Homepage = props => {
               </Typography>
 
               <Box sx={{ marginTop: '1rem' }}>
-                {/* <Button sx={styles.button1} onClick={handleBtn1}>
-                  Male
-                </Button>
-                <Button sx={styles.button2} onClick={handleBtn2}>
-                  Female
-                </Button> */}
-
                 <RadioGroup
                   aria-labelledby="demo-radio-buttons-group-label"
                   defaultValue="Male"

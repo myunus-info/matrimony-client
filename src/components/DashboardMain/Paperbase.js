@@ -1,14 +1,14 @@
 import { CssBaseline, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useState } from 'react';
-import useAuth from '../../utils/useAuth';
+import React, { useContext, useState } from 'react';
 import Header from './Header';
 import Navigator from './Navigator';
 import { Outlet, Navigate } from 'react-router-dom';
+import AuthContext from '../../utils/auth-context';
 
 const drawerWidth = 256;
 const Paperbase = () => {
-  const auth = useAuth();
+  const authCtx = useContext(AuthContext);
   const theme = useTheme();
   const isSmUp = useMediaQuery(theme.breakpoints.up('sm'));
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -37,7 +37,7 @@ const Paperbase = () => {
         <Header onDrawerToggle={handleDrawerToggle} />
 
         <Box component="main" sx={{ flex: 1, py: 6, px: 4, bgcolor: '#eaeff1' }}>
-          {auth ? <Outlet /> : <Navigate to="/register" />}
+          {authCtx.isLoggedIn ? <Outlet /> : <Navigate to="/register" />}
         </Box>
       </Box>
     </Box>
