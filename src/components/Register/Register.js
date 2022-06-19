@@ -27,9 +27,9 @@ const Register = ({ gender }) => {
     formState: { isSubmitSuccessful },
   } = useForm();
 
-  const createUser = (_, userData) => {
+  const createUser = (user, userData) => {
     const expirationTime = new Date(Date.now() + 60 * 60 * 1000).toISOString();
-    authCtx.login(userData.token, expirationTime);
+    authCtx.login(user, userData.token, expirationTime);
     navigate('/dashboard/settings');
   };
   const createUserHandler = async userInfo => {
